@@ -18,7 +18,7 @@ const featureCards = [
   {
     number: "02",
     title: ["すべてのメニューに", "ヘッドスパと炭酸泉を"],
-    imageSrc: "/home/features/spa.jpg",
+    imageSrc: "/home/features/spa.webp",
     imageAlt: "炭酸泉をイメージした写真",
     body: [
       "にくきゅうでは、すべてのメニューにヘッドスパと炭酸泉が含まれています。",

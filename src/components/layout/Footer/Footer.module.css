@@ -1,0 +1,91 @@
+.footer {
+    background: #fff8f3;
+    color: #bf5225;
+    padding: 31px 24px 19px;
+}
+
+.inner {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+}
+
+.message {
+    display: grid;
+    gap: 2px;
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.45;
+    letter-spacing: 0.12em;
+}
+
+.followLink {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 13px;
+    color: #bf5225;
+    line-height: 1;
+    text-decoration: none;
+    transition:
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.followLink:hover,
+.followLink:focus-visible {
+    color: #e66832;
+    transform: translateY(-1px);
+}
+
+.followLink:focus-visible {
+    outline: none;
+}
+
+.followText {
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+}
+
+.icon {
+    display: inline-flex;
+    width: 25px;
+    height: 25px;
+}
+
+.icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    margin: 52px 0 0;
+    color: #bf5225;
+    font-family: var(--font-logo);
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: 0.18em;
+    text-indent: 0.18em;
+}
+
+.copyright {
+    margin: 42px 0 0;
+    color: #bf5225;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        padding-bottom: 24px;
+    }
+
+    .inner {
+        max-width: 393px;
+        margin: 0 auto;
+    }
+}

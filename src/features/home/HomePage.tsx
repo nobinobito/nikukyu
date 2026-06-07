@@ -3,6 +3,7 @@ import {HeroSection} from "@/features/home/sections/HeroSection/HeroSection";
 import {AboutSection} from "@/features/home/sections/AboutSection/AboutSection";
 import {ExperienceSection} from "@/features/home/sections/ExperienceSection/ExperienceSection";
 import {FeaturesSection} from "@/features/home/sections/FeaturesSection/FeaturesSection";
+import {Footer} from "@/components/layout/Footer/Footer";
 import {OnlineStoreSection} from "@/features/home/sections/OnlineStoreSection/OnlineStoreSection";
 import {PaymentsSection} from "@/features/home/sections/PaymentsSection/PaymentsSection";
 import {ReservationGuideSection} from "@/features/home/sections/ReservationGuideSection/ReservationGuideSection";
@@ -22,6 +23,7 @@ export function HomePage() {
         <PaymentsSection/>
         <SalonInformationSection/>
         <ReservationGuideSection/>
+        <Footer/>
       </main>
     </div>
   );
