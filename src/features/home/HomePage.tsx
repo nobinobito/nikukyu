@@ -3,6 +3,7 @@ import {HeroSection} from "@/features/home/sections/HeroSection/HeroSection";
 import {AboutSection} from "@/features/home/sections/AboutSection/AboutSection";
 import {ExperienceSection} from "@/features/home/sections/ExperienceSection/ExperienceSection";
 import {FeaturesSection} from "@/features/home/sections/FeaturesSection/FeaturesSection";
+import {OnlineStoreSection} from "@/features/home/sections/OnlineStoreSection/OnlineStoreSection";
 import {SalonProductsSection} from "@/features/home/sections/SalonProductsSection/SalonProductsSection";
 
 export function HomePage() {
@@ -14,6 +15,7 @@ export function HomePage() {
         <FeaturesSection/>
         <ExperienceSection/>
         <SalonProductsSection/>
+        <OnlineStoreSection/>
       </main>
     </div>
   );
