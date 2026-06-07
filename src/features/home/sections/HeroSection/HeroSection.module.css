@@ -1,0 +1,125 @@
+.hero {
+    background: #ffffff;
+    padding: 0;
+    min-height: 100svh;
+}
+
+.inner {
+    position: relative;
+    width: min(100%, 393px);
+    min-height: max(852px, 100svh);
+    margin: 0 auto;
+}
+
+.logo {
+    position: absolute;
+    top: 58px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    color: #bf5225;
+    font-family: var(--font-logo);
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+}
+
+.logoSub {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    padding-left: 0.46em;
+    white-space: nowrap;
+}
+
+.logoMain {
+    display: block;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    padding-left: 0.06em;
+    white-space: nowrap;
+}
+
+.visualArea {
+    position: absolute;
+    inset: 0;
+}
+
+.cat {
+    position: absolute;
+    display: block;
+    width: 145px;
+    height: auto;
+}
+
+.catRight {
+    top: 200px;
+    left: 198px;
+    transform: scaleY(-1);
+    transform-origin: center;
+}
+
+.catLeft {
+    top: 347px;
+    left: 52px;
+    transform: scaleX(-1);
+    transform-origin: center;
+}
+
+.copy {
+    position: absolute;
+    top: 548px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    margin: 0;
+    color: #bf5225;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+}
+
+.copy span {
+    display: block;
+}
+
+.copy span + span {
+    margin-top: 38px;
+}
+
+.scrollGuide {
+    position: absolute;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.scrollText {
+    color: #bf5225;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+}
+
+.scrollLine {
+    display: block;
+    width: 1px;
+    height: 60px;
+    background: #bf5225;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        min-height: auto;
+    }
+
+    .inner {
+        min-height: 852px;
+    }
+}

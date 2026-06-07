@@ -1,24 +1,32 @@
 {
-  "name": "nobinobito",
+  "name": "nikukyu",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
-    "next": "16.1.6",
+    "next": "16.2.7",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@storybook/addon-docs": "^10.3.6",
+    "@storybook/nextjs-vite": "^10.3.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.1.6",
+    "eslint-config-next": "16.2.7",
+    "storybook": "^10.3.6",
     "typescript": "^5"
+  },
+  "volta": {
+    "node": "22.22.3"
   }
 }

@@ -1,0 +1,39 @@
+:root {
+    /* colors */
+    --color-bg: #fff8f1;
+    --color-bg-soft: #fffdf9;
+    --color-bg-brown: #b9653f;
+
+    --color-main: #c97b63;
+    --color-main-light: #f8c99d;
+
+    --color-text: #4f3a32;
+    --color-text-soft: #8a6b5f;
+    --color-text-light: #fff8f1;
+
+    --color-border: #f3d8c7;
+    --color-white: #ffffff;
+
+    /* spacing */
+    --space-page-x: 24px;
+    --space-section-y: 80px;
+
+    /* radius */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+    --radius-pill: 999px;
+
+    /* shadow */
+    --shadow-card: 0 16px 40px rgba(201, 123, 99, 0.1);
+    --shadow-button: 0 12px 28px rgba(201, 123, 99, 0.24);
+
+    /* layout */
+    --site-max-width: 430px;
+    --header-height: 64px;
+    --fixed-reserve-height: 88px;
+
+    /* z-index */
+    --z-header: 40;
+    --z-fixed-reserve: 50;
+}
