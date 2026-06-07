@@ -5,6 +5,7 @@ import {ExperienceSection} from "@/features/home/sections/ExperienceSection/Expe
 import {FeaturesSection} from "@/features/home/sections/FeaturesSection/FeaturesSection";
 import {OnlineStoreSection} from "@/features/home/sections/OnlineStoreSection/OnlineStoreSection";
 import {PaymentsSection} from "@/features/home/sections/PaymentsSection/PaymentsSection";
+import {ReservationGuideSection} from "@/features/home/sections/ReservationGuideSection/ReservationGuideSection";
 import {SalonInformationSection} from "@/features/home/sections/SalonInformationSection/SalonInformationSection";
 import {SalonProductsSection} from "@/features/home/sections/SalonProductsSection/SalonProductsSection";
 
@@ -20,6 +21,7 @@ export function HomePage() {
         <OnlineStoreSection/>
         <PaymentsSection/>
         <SalonInformationSection/>
+        <ReservationGuideSection/>
       </main>
     </div>
   );
