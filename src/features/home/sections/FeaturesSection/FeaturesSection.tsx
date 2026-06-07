@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import styles from "./FeaturesSection.module.css";
 
 const featureCards = [
@@ -36,6 +39,46 @@ const featureCards = [
 ] as const;
 
 export function FeaturesSection() {
+  const visualRefs = useRef<Array<HTMLDivElement | null>>([]);
+
+  useEffect(() => {
+    const updateParallax = () => {
+      const viewportCenter = window.innerHeight / 2;
+
+      visualRefs.current.forEach((node) => {
+        if (!node) return;
+
+        const rect = node.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const distanceFromCenter = cardCenter - viewportCenter;
+        const normalized = Math.max(-1, Math.min(1, distanceFromCenter / window.innerHeight));
+        const offset = normalized * -80;
+
+        node.style.setProperty("--parallax-offset", `${offset.toFixed(2)}px`);
+      });
+    };
+
+    let frame = 0;
+
+    const requestUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        updateParallax();
+        frame = 0;
+      });
+    };
+
+    updateParallax();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+    };
+  }, []);
+
   return (
     <section className={styles.features} aria-labelledby="features-title">
       <div className={styles.inner}>
@@ -59,9 +102,15 @@ export function FeaturesSection() {
                 </h3>
               </div>
 
-              {/* Temporary Figma asset URLs until local files are added under public/home/features/. */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className={styles.cardImage} src={card.imageSrc} alt={card.imageAlt} />
+              <div
+                className={styles.cardVisual}
+                ref={(node) => {
+                  visualRefs.current[Number(card.number) - 1] = node;
+                }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className={styles.cardImage} src={card.imageSrc} alt={card.imageAlt} />
+              </div>
 
               <div className={styles.cardBody}>
                 {card.body.map((paragraph) => (
