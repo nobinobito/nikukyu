@@ -67,7 +67,7 @@ export function ExperienceSection() {
                 {/* Temporary Figma asset URLs until local files are added under public/home/experience/. */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img className={styles.markerIcon} src={pawIconSrc} alt="" />
-                {index < experienceSteps.length - 1 ? <span className={styles.markerLine}/> : null}
+                <span className={styles.markerLine}/>
               </div>
 
               <div className={styles.stepContent}>

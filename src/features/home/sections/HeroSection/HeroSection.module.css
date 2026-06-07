@@ -58,14 +58,12 @@
 .catRight {
     top: 200px;
     left: 198px;
-    transform: scaleY(-1);
-    transform-origin: center;
 }
 
 .catLeft {
     top: 347px;
     left: 52px;
-    transform: scaleX(-1);
+    transform: scale(-1, -1);
     transform-origin: center;
 }
 
