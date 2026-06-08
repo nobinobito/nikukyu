@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 import styles from "./ExperienceSection.module.css";
 
 const pawIconSrc = "/home/experience/pow.svg";
@@ -49,6 +53,78 @@ const experienceSteps = [
 ] as const;
 
 export function ExperienceSection() {
+  const stepRefs = useRef<Array<HTMLElement | null>>([]);
+  const [visibleSteps, setVisibleSteps] = useState<number[]>([]);
+  const [showBark, setShowBark] = useState(false);
+  const [barkSeed, setBarkSeed] = useState(0);
+
+  const triggerBark = () => {
+    setShowBark(false);
+    setBarkSeed((currentSeed) => currentSeed + 1);
+    window.setTimeout(() => {
+      setShowBark(true);
+    }, 0);
+  };
+
+  useEffect(() => {
+    const stepElements = stepRefs.current.filter((step): step is HTMLElement => step !== null);
+
+    if (stepElements.length === 0) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          const stepIndex = Number(entry.target.getAttribute("data-step-index"));
+
+          setVisibleSteps((currentVisibleSteps) => {
+            if (currentVisibleSteps.includes(stepIndex)) {
+              return currentVisibleSteps;
+            }
+
+            triggerBark();
+
+            return [...currentVisibleSteps, stepIndex];
+          });
+
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -12% 0px",
+        threshold: 0.3,
+      },
+    );
+
+    stepElements.forEach((stepElement) => {
+      observer.observe(stepElement);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!showBark) {
+      return;
+    }
+
+    const timerId = window.setTimeout(() => {
+      setShowBark(false);
+    }, 1200);
+
+    return () => {
+      window.clearTimeout(timerId);
+    };
+  }, [showBark, barkSeed]);
+
   return (
     <section id="experience" className={styles.experience} aria-labelledby="experience-title">
       <div className={styles.inner}>
@@ -61,8 +137,15 @@ export function ExperienceSection() {
         </header>
 
         <div className={styles.timeline}>
-          {experienceSteps.map((step) => (
-            <article key={step.title} className={styles.step}>
+          {experienceSteps.map((step, index) => (
+            <article
+              key={step.title}
+              ref={(element) => {
+                stepRefs.current[index] = element;
+              }}
+              data-step-index={index}
+              className={`${styles.step} ${visibleSteps.includes(index) ? styles.stepVisible : ""}`}
+            >
               <div className={styles.markerColumn} aria-hidden="true">
                 {/* Temporary Figma asset URLs until local files are added under public/home/experience/. */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -83,7 +166,12 @@ export function ExperienceSection() {
         </div>
 
         <div className={styles.illustrationWrap} aria-hidden="true">
-          <img className={styles.illustration} src={dogSrc} alt="" />
+          <button type="button" className={styles.illustrationButton} onClick={triggerBark} aria-label="わんこがわんわんと鳴く">
+            <img className={`${styles.illustration} ${showBark ? styles.illustrationBarking : ""}`} src={dogSrc} alt="" aria-hidden="true" />
+          </button>
+          {showBark ? (
+            <span key={`bark-${barkSeed}`} aria-hidden="true" className={styles.barkText}>わん、わん！</span>
+          ) : null}
         </div>
       </div>
     </section>

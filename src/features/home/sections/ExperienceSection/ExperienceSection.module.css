@@ -54,6 +54,16 @@
     grid-template-columns: 36px 1fr;
     column-gap: 14px;
     align-items: start;
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    transition:
+        opacity 760ms ease,
+        transform 760ms ease;
+}
+
+.stepVisible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 
 .markerColumn {
@@ -108,16 +118,109 @@
 }
 
 .illustrationWrap {
+    position: relative;
     display: flex;
     justify-content: center;
     margin-top: 28px;
     padding-left: 38px;
 }
 
+.illustrationButton {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.illustrationButton:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 8px;
+    border-radius: 999px;
+}
+
 .illustration {
     display: block;
     width: 155px;
     height: auto;
+}
+
+.illustrationBarking {
+    animation: dogBarkShake 900ms ease-in-out 1;
+    transform-origin: center;
+}
+
+.barkText {
+    position: absolute;
+    top: -20px;
+    right: calc(50% - 116px);
+    color: #ffffff;
+    font-family: var(--font-logo);
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    animation: barkPop 1200ms ease-out 1 both;
+    pointer-events: none;
+}
+
+@keyframes dogBarkShake {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+
+    16% {
+        transform: translate3d(-2px, 0, 0) rotate(-1.6deg);
+    }
+
+    32% {
+        transform: translate3d(2px, -1px, 0) rotate(1.6deg);
+    }
+
+    48% {
+        transform: translate3d(-2px, 0, 0) rotate(-1.3deg);
+    }
+
+    64% {
+        transform: translate3d(2px, 0, 0) rotate(1.1deg);
+    }
+
+    80% {
+        transform: translate3d(-1px, 0, 0) rotate(-0.8deg);
+    }
+}
+
+@keyframes barkPop {
+    0% {
+        opacity: 0;
+        transform: rotate(-6deg) translate3d(0, 10px, 0) scale(0.9);
+    }
+
+    18%,
+    64% {
+        opacity: 1;
+        transform: rotate(-3deg) translate3d(0, 0, 0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotate(-1deg) translate3d(0, -12px, 0) scale(1.04);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .step {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .illustrationBarking,
+    .barkText {
+        animation: none;
+    }
 }
 
 @media (min-width: 768px) {
