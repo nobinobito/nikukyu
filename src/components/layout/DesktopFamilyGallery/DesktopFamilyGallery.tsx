@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import styles from "./DesktopFamilyGallery.module.css";
 
 const samplePhotos = [
-  { src: "/home/experience/dog.svg", alt: "sample dog 1", className: "dogCard" },
+  { src: "/home/about/about-bg.jpg", alt: "sample dog 1", className: "dogCard" },
   { src: "/home/hero/cat.svg", alt: "sample cat 1", className: "catCard" },
   { src: "/home/online_store/cat_on_pc.svg", alt: "sample cat 2", className: "pcCatCard" },
-  { src: "/home/experience/dog.svg", alt: "sample dog 2", className: "dogCardSoft" },
+  { src: "/home/about/about-bg.jpg", alt: "sample dog 2", className: "dogCardSoft" },
   { src: "/home/hero/cat.svg", alt: "sample cat 3", className: "catCardWarm" },
   { src: "/home/online_store/cat_on_pc.svg", alt: "sample cat 4", className: "pcCatCardSoft" },
-  { src: "/home/experience/dog.svg", alt: "sample dog 3", className: "dogCardWarm" },
+  { src: "/home/about/about-bg.jpg", alt: "sample dog 3", className: "dogCardWarm" },
   { src: "/home/hero/cat.svg", alt: "sample cat 5", className: "catCardSoft" },
 ] as const;
 
