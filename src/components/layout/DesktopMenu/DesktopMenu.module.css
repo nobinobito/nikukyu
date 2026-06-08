@@ -10,21 +10,21 @@
         transform: translateX(-50%);
         z-index: var(--z-header);
         display: grid;
-        gap: 14px;
-        width: 224px;
+        gap: 12px;
+        width: min(224px, calc(((100vw - var(--site-max-width)) / 2) - 32px));
     }
 
     .nav {
         display: grid;
-        gap: 10px;
+        gap: clamp(6px, 1vw, 10px);
     }
 
     .link {
         display: grid;
         justify-items: center;
         gap: 4px;
-        min-height: 72px;
-        padding: 14px 20px;
+        min-height: clamp(54px, 7vw, 72px);
+        padding: clamp(10px, 1.4vw, 14px) clamp(12px, 1.8vw, 20px);
         border: 1px solid #e66832;
         border-radius: 999px;
         background: rgba(255, 248, 243, 0.98);
@@ -51,13 +51,13 @@
 
     .linkLabel {
         font-family: var(--font-heading-en);
-        font-size: 22px;
+        font-size: clamp(18px, 2vw, 22px);
         line-height: 1;
         letter-spacing: 0.08em;
     }
 
     .linkSubLabel {
-        font-size: 12px;
+        font-size: clamp(10px, 1.1vw, 12px);
         line-height: 1.4;
         letter-spacing: 0.12em;
     }
@@ -67,7 +67,7 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-        min-height: 42px;
+        min-height: clamp(34px, 4vw, 42px);
         color: #bf5225;
         transition:
             opacity 180ms ease,
@@ -85,15 +85,15 @@
     }
 
     .followText {
-        font-size: 11px;
+        font-size: clamp(10px, 1vw, 11px);
         line-height: 1.4;
         letter-spacing: 0.12em;
     }
 
     .followIcon {
         display: inline-flex;
-        width: 16px;
-        height: 16px;
+        width: clamp(14px, 1.4vw, 16px);
+        height: clamp(14px, 1.4vw, 16px);
     }
 
     .followIcon svg {
