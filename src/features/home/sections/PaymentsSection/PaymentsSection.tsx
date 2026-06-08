@@ -12,7 +12,7 @@ const paymentMethods = [
 
 export function PaymentsSection() {
   return (
-    <section className={styles.section} aria-labelledby="payments-title">
+    <section id="payments" className={styles.section} aria-labelledby="payments-title">
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 id="payments-title" className={styles.heading}>

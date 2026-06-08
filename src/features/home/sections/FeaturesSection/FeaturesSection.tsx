@@ -80,7 +80,7 @@ export function FeaturesSection() {
   }, []);
 
   return (
-    <section className={styles.features} aria-labelledby="features-title">
+    <section id="features" className={styles.features} aria-labelledby="features-title">
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 id="features-title" className={styles.heading}>

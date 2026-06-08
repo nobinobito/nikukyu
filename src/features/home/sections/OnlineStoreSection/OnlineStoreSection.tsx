@@ -4,7 +4,7 @@ const catOnPcSrc = "/home/online_store/cat_on_pc.svg";
 
 export function OnlineStoreSection() {
   return (
-    <section className={styles.section} aria-labelledby="online-store-title">
+    <section id="online-store" className={styles.section} aria-labelledby="online-store-title">
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 id="online-store-title" className={styles.heading}>

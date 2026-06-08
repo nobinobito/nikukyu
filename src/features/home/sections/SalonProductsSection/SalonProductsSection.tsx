@@ -25,7 +25,7 @@ const productCards = [
 
 export function SalonProductsSection() {
   return (
-    <section className={styles.section} aria-labelledby="salon-products-title">
+    <section id="salon-products" className={styles.section} aria-labelledby="salon-products-title">
       <div className={styles.hero}>
         <img className={styles.heroBackground} src={heroBackgroundSrc} alt="" aria-hidden="true" />
         <div className={styles.heroOverlay}/>

@@ -1,0 +1,231 @@
+.trigger {
+    position: fixed;
+    top: 16px;
+    right: 13px;
+    z-index: 80;
+    width: 56px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+.iconWrap {
+    position: relative;
+    display: block;
+    width: 56px;
+    height: 44px;
+    transition:
+        transform 180ms ease,
+        opacity 180ms ease;
+}
+
+.iconWrapOpen {
+    opacity: 0.72;
+    transform: translateY(1px) scale(0.96);
+}
+
+.iconImage {
+    width: 100%;
+    height: 100%;
+}
+
+.lines {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    width: 30px;
+    height: 12px;
+    transform: translateX(-50%);
+}
+
+.line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: #ffffff;
+    border-radius: 999px;
+    transform-origin: center;
+    transition:
+        transform 180ms ease,
+        top 180ms ease;
+}
+
+.line:first-child {
+    top: 0.5px;
+}
+
+.line:last-child {
+    top: 9.5px;
+}
+
+.line.lineTopOpen {
+    top: 5px;
+    transform: rotate(40deg);
+}
+
+.line.lineBottomOpen {
+    top: 5px;
+    transform: rotate(-40deg);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    pointer-events: none;
+}
+
+.overlayOpen {
+    pointer-events: auto;
+}
+
+.backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: rgba(79, 58, 50, 0.2);
+    opacity: 0;
+    transition: opacity 180ms ease;
+}
+
+.overlayOpen .backdrop {
+    opacity: 1;
+}
+
+.panel {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    align-content: start;
+    gap: 16px;
+    width: 100%;
+    height: 100%;
+    padding: 88px 24px 28px;
+    background: #bf5225;
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+        opacity 220ms ease,
+        transform 220ms ease;
+}
+
+.overlayOpen .panel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.eyebrow {
+    margin: 0;
+    color: #ffffff;
+    font-family: var(--font-logo);
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.18em;
+    text-align: center;
+}
+
+.logo {
+    margin: 0 0 16px;
+    color: #ffffff;
+    font-family: var(--font-logo);
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+.menuList {
+    display: grid;
+    gap: 6px;
+}
+
+.menuLink {
+    display: grid;
+    align-items: start;
+    min-height: 48px;
+    padding: 8px 0;
+    color: #fff4ed;
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.menuLink:hover,
+.menuLink:focus-visible,
+.menuLink:active {
+    opacity: 0.74;
+    transform: translateX(-2px);
+}
+
+.menuLink:focus-visible {
+    outline: none;
+}
+
+.menuText {
+    display: grid;
+    gap: 3px;
+    justify-items: center;
+    width: 100%;
+}
+
+.menuLabel {
+    color: currentColor;
+    font-family: var(--font-heading-en);
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
+
+.menuSubLabel {
+    color: currentColor;
+    font-size: 12px;
+    line-height: 1.45;
+    letter-spacing: 0.12em;
+    text-align: center;
+}
+
+.followLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.88);
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.followLink:hover,
+.followLink:focus-visible,
+.followLink:active {
+    opacity: 0.74;
+    transform: translateY(-1px);
+}
+
+.followLink:focus-visible {
+    outline: none;
+}
+
+.followText {
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+}
+
+.followIcon {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+}
+
+.followIcon svg {
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .trigger,
+    .overlay {
+        display: none;
+    }
+}

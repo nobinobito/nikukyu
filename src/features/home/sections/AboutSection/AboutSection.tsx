@@ -4,7 +4,7 @@ const aboutBackgroundSrc = "/home/about/about-bg.jpg";
 
 export function AboutSection() {
   return (
-    <section className={styles.about} aria-labelledby="about-title">
+    <section id="about" className={styles.about} aria-labelledby="about-title">
       <div className={styles.background} aria-hidden="true">
         {/* Temporary Figma asset URL until a local file is added under public/home/about/. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}

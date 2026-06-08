@@ -6,7 +6,7 @@ const googleMapUrl =
 
 export function SalonInformationSection() {
   return (
-    <section className={styles.section} aria-labelledby="salon-information-title">
+    <section id="salon-information" className={styles.section} aria-labelledby="salon-information-title">
       <div className={styles.imageWrap} aria-hidden="true">
         <img className={styles.image} src={backgroundImgSrc} alt="" />
       </div>

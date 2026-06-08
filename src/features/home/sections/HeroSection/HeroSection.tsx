@@ -4,7 +4,7 @@ const catSrc = "/home/hero/cat.svg";
 
 export function HeroSection() {
   return (
-    <section className={styles.hero} aria-labelledby="hero-title">
+    <section id="hero" className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.inner}>
         <h1 id="hero-title" className={styles.logo}>
           <span className={styles.logoSub}>hair salon</span>

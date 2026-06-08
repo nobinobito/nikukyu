@@ -49,6 +49,10 @@ main {
   padding-bottom: var(--fixed-reserve-height);
 }
 
+:where(section[id], footer[id]) {
+  scroll-margin-top: 88px;
+}
+
 ::selection {
   background: var(--color-main-light);
   color: var(--color-text);

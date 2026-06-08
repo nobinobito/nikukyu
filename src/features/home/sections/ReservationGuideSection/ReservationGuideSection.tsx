@@ -8,7 +8,7 @@ const reservationLinks = [
 
 export function ReservationGuideSection() {
   return (
-    <section className={styles.section} aria-labelledby="reservation-guide-title">
+    <section id="reservation-guide" className={styles.section} aria-labelledby="reservation-guide-title">
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 id="reservation-guide-title" className={styles.heading}>

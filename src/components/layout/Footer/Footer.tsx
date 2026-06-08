@@ -4,7 +4,7 @@ const instagramLink = "https://www.instagram.com/nikukyu.hair/";
 
 export function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer id="footer" className={styles.footer}>
       <div className={styles.inner}>
         <p className={styles.message}>
           <span>日々のお知らせや、にくきゅうの日常</span>

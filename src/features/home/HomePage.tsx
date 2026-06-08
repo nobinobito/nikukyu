@@ -1,4 +1,5 @@
 import styles from "./HomePage.module.css";
+import {MobileMenu} from "@/components/layout/MobileMenu/MobileMenu";
 import {HeroSection} from "@/features/home/sections/HeroSection/HeroSection";
 import {AboutSection} from "@/features/home/sections/AboutSection/AboutSection";
 import {ExperienceSection} from "@/features/home/sections/ExperienceSection/ExperienceSection";
@@ -13,6 +14,7 @@ import {SalonProductsSection} from "@/features/home/sections/SalonProductsSectio
 export function HomePage() {
   return (
     <div className={styles.siteShell}>
+      <MobileMenu/>
       <main className={styles.main}>
         <HeroSection/>
         <AboutSection/>

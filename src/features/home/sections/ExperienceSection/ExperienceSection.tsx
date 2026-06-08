@@ -50,7 +50,7 @@ const experienceSteps = [
 
 export function ExperienceSection() {
   return (
-    <section className={styles.experience} aria-labelledby="experience-title">
+    <section id="experience" className={styles.experience} aria-labelledby="experience-title">
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 id="experience-title" className={styles.heading}>
@@ -61,7 +61,7 @@ export function ExperienceSection() {
         </header>
 
         <div className={styles.timeline}>
-          {experienceSteps.map((step, index) => (
+          {experienceSteps.map((step) => (
             <article key={step.title} className={styles.step}>
               <div className={styles.markerColumn} aria-hidden="true">
                 {/* Temporary Figma asset URLs until local files are added under public/home/experience/. */}
