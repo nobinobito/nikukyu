@@ -14,6 +14,15 @@ const samplePhotos = [
   { src: "/home/hero/cat.svg", alt: "sample cat 5", className: "catCardSoft" },
 ] as const;
 
+const hashtags = [
+  "#にくきゅう",
+  "#貸し切りヘアサロン",
+  "#森下美容室",
+  "#マンツーマンサロン",
+  "#ヘッドスパ",
+  "#愛犬と愛猫",
+] as const;
+
 function getRandomInt(max: number) {
   return Math.floor(Math.random() * max);
 }
@@ -94,6 +103,20 @@ export function DesktopFamilyGallery() {
             </figure>
           );
         })}
+      </div>
+
+      <div className={styles.hashtagRail} aria-hidden="true">
+        <div className={styles.hashtagTrack}>
+          {[0, 1].map((copyIndex) => (
+            <div key={copyIndex} className={styles.hashtagGroup}>
+              {hashtags.map((tag) => (
+                <span key={`${copyIndex}-${tag}`} className={styles.hashtag}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </aside>
   );
