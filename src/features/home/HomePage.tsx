@@ -1,3 +1,4 @@
+import {DesktopMenu} from "@/components/layout/DesktopMenu/DesktopMenu";
 import {FixedReservationBar} from "@/components/layout/FixedReservationBar/FixedReservationBar";
 import styles from "./HomePage.module.css";
 import {MobileMenu} from "@/components/layout/MobileMenu/MobileMenu";
@@ -16,6 +17,7 @@ export function HomePage() {
   return (
     <div className={styles.siteShell}>
       <MobileMenu/>
+      <DesktopMenu/>
       <FixedReservationBar/>
       <main className={styles.main}>
         <HeroSection/>

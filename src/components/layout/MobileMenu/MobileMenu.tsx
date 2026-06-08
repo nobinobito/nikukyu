@@ -1,22 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { instagramLink, siteNavigationItems } from "../siteNavigation";
 import styles from "./MobileMenu.module.css";
 
 const menuIconSrc = "/common/menu/menu.svg";
-const instagramLink = "https://www.instagram.com/nikukyu.hair/";
-
-const menuItems = [
-  { label: "Home", sublabel: "ホーム", href: "#hero" },
-  { label: "About", sublabel: "にくきゅうについて", href: "#about" },
-  { label: "Features", sublabel: "特徴", href: "#features" },
-  { label: "Experience", sublabel: "過ごし方", href: "#experience" },
-  { label: "Salon Products", sublabel: "サロンで使う商品", href: "#salon-products" },
-  { label: "Online Store", sublabel: "オンラインショップ", href: "#online-store" },
-  { label: "Payments", sublabel: "お支払い方法", href: "#payments" },
-  { label: "Salon Information", sublabel: "サロン情報", href: "#salon-information" },
-  { label: "Reservation Guide", sublabel: "予約案内", href: "#reservation-guide" },
-] as const;
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,7 +61,7 @@ export function MobileMenu() {
           <p className={styles.logo}>にくきゅう</p>
 
           <div className={styles.menuList}>
-            {menuItems.map((item) => (
+            {siteNavigationItems.map((item) => (
               <a
                 key={item.href}
                 className={styles.menuLink}
