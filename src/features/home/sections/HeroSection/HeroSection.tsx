@@ -74,10 +74,10 @@ export function HeroSection() {
           <span aria-hidden="true" className={`${styles.meow} ${styles.meowRight}`}>にゃ〜</span>
           <span aria-hidden="true" className={`${styles.meow} ${styles.meowLeft}`}>にゃ〜</span>
           {showRightMeow ? (
-            <span key={rightMeowSeed} aria-hidden="true" className={`${styles.meow} ${styles.meowRight} ${styles.meowInteractive}`}>にゃ〜</span>
+            <span key={`right-${rightMeowSeed}`} aria-hidden="true" className={`${styles.meow} ${styles.meowRight} ${styles.meowInteractive}`}>にゃ〜</span>
           ) : null}
           {showLeftMeow ? (
-            <span key={leftMeowSeed} aria-hidden="true" className={`${styles.meow} ${styles.meowLeft} ${styles.meowInteractive}`}>にゃ〜</span>
+            <span key={`left-${leftMeowSeed}`} aria-hidden="true" className={`${styles.meow} ${styles.meowLeft} ${styles.meowInteractive}`}>にゃ〜</span>
           ) : null}
         </div>
 
