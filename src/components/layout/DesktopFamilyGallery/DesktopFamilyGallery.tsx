@@ -79,32 +79,33 @@ export function DesktopFamilyGallery() {
   }, []);
 
   return (
-    <aside className={styles.wrap} aria-label="Family gallery sample">
-      <div className={styles.header}>
-        <p className={styles.eyebrow}>Our family</p>
-        <p className={styles.copy}>わが家の愛犬と愛猫をご紹介</p>
-      </div>
+    <>
+      <aside className={styles.wrap} aria-label="Family gallery sample">
+        <div className={styles.header}>
+          <p className={styles.eyebrow}>Our family</p>
+          <p className={styles.copy}>わが家の愛犬と愛猫をご紹介</p>
+        </div>
 
-      <div className={styles.grid}>
-        {visibleIndices.map((photoIndex, index) => {
-          const photo = samplePhotos[photoIndex];
+        <div className={styles.grid}>
+          {visibleIndices.map((photoIndex, index) => {
+            const photo = samplePhotos[photoIndex];
 
-          return (
-            <figure
-              key={`slot-${index}`}
-              className={`${styles.card} ${styles[photo.className]}`}
-            >
-              <img
-                key={`${photo.alt}-${photoIndex}`}
-                className={`${styles.image} ${styles.imageFade}`}
-                src={photo.src}
-                alt={photo.alt}
-              />
-            </figure>
-          );
-        })}
-      </div>
-
+            return (
+              <figure
+                key={`slot-${index}`}
+                className={`${styles.card} ${styles[photo.className]}`}
+              >
+                <img
+                  key={`${photo.alt}-${photoIndex}`}
+                  className={`${styles.image} ${styles.imageFade}`}
+                  src={photo.src}
+                  alt={photo.alt}
+                />
+              </figure>
+            );
+          })}
+        </div>
+      </aside>
       <div className={styles.hashtagRail} aria-hidden="true">
         <div className={styles.hashtagTrack}>
           {[0, 1].map((copyIndex) => (
@@ -118,6 +119,6 @@ export function DesktopFamilyGallery() {
           ))}
         </div>
       </div>
-    </aside>
+    </>
   );
 }
