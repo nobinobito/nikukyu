@@ -1,8 +1,8 @@
 import styles from "./ReservationGuideSection.module.css";
 
 const reservationLinks = [
-  { label: "LINE予約", href: "#" },
-  { label: "Instagram予約", href: "#" },
+  { label: "LINE予約", href: "https://lin.ee/OM03LzR  " },
+  { label: "Instagram予約", href: "https://www.instagram.com/nikukyu.hair/" },
   { label: "Google予約", href: "#" },
 ] as const;
 
