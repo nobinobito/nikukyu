@@ -1,0 +1,73 @@
+.wrap {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    z-index: var(--z-fixed-reserve);
+    width: min(calc(100vw - 24px), 390px);
+    padding: 0 0 calc(12px + env(safe-area-inset-bottom));
+    transform: translate(-50%, calc(100% + 16px));
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        transform 220ms ease,
+        opacity 220ms ease;
+}
+
+.wrapVisible {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.button {
+    display: grid;
+    justify-items: center;
+    gap: 3px;
+    width: 100%;
+    min-height: 72px;
+    padding: 14px 20px;
+    border: 1px solid #e66832;
+    border-radius: 999px;
+    background: rgba(255, 248, 243, 0.98);
+    color: #bf5225;
+    box-shadow: 0 12px 30px rgba(191, 82, 37, 0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    background: #bf5225;
+    border-color: #bf5225;
+    color: #fff8f3;
+    transform: translateY(-1px);
+}
+
+.button:focus-visible {
+    outline: none;
+}
+
+.labelEn {
+    font-family: var(--font-heading-en);
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+}
+
+.labelJa {
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+}
+
+@media (min-width: 768px) {
+    .wrap {
+        width: min(calc(100vw - 40px), 398px);
+        padding-bottom: 20px;
+    }
+}
