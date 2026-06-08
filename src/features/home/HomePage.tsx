@@ -1,6 +1,7 @@
 import {DesktopFamilyGallery} from "@/components/layout/DesktopFamilyGallery/DesktopFamilyGallery";
 import {DesktopMenu} from "@/components/layout/DesktopMenu/DesktopMenu";
 import {FixedReservationBar} from "@/components/layout/FixedReservationBar/FixedReservationBar";
+import {IntroMessageOverlay} from "@/components/layout/IntroMessageOverlay/IntroMessageOverlay";
 import styles from "./HomePage.module.css";
 import {MobileMenu} from "@/components/layout/MobileMenu/MobileMenu";
 import {HeroSection} from "@/features/home/sections/HeroSection/HeroSection";
@@ -17,6 +18,7 @@ import {SalonProductsSection} from "@/features/home/sections/SalonProductsSectio
 export function HomePage() {
   return (
     <div className={styles.siteShell}>
+      <IntroMessageOverlay/>
       <MobileMenu/>
       <DesktopFamilyGallery/>
       <DesktopMenu/>

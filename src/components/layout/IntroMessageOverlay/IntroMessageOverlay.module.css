@@ -1,0 +1,57 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    display: grid;
+    place-items: center;
+    background: #fff8f3;
+    opacity: 1;
+    transition: opacity 700ms ease;
+}
+
+.overlayFading {
+    opacity: 0;
+}
+
+.inner {
+    display: grid;
+    gap: 16px;
+    justify-items: center;
+    padding: 24px;
+    text-align: center;
+}
+
+.line {
+    margin: 0;
+    color: #bf5225;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.45;
+    letter-spacing: 0.12em;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: introLineIn 820ms ease forwards;
+}
+
+@keyframes introLineIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .overlay {
+        transition: none;
+    }
+
+    .line {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
