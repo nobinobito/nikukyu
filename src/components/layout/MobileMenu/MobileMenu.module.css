@@ -105,6 +105,9 @@
     padding: 88px 24px 28px;
     background: #bf5225;
     opacity: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
     transform: translateY(14px);
     transition:
         opacity 220ms ease,
@@ -227,5 +230,31 @@
     .trigger,
     .overlay {
         display: none;
+    }
+}
+
+@media (max-height: 760px) {
+    .panel {
+        gap: 12px;
+        padding-top: 72px;
+        padding-bottom: 20px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        font-size: 28px;
+    }
+
+    .menuList {
+        gap: 2px;
+    }
+
+    .menuLink {
+        min-height: 42px;
+        padding: 6px 0;
+    }
+
+    .menuLabel {
+        font-size: 20px;
     }
 }
