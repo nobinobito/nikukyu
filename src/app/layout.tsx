@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "hair salon にくきゅう",
   description:
     "森下にオープンする、お客様だけのプライベートヘアサロン。hair salon にくきゅうの公式サイトです。",
+  manifest: "/manifest.webmanifest",
+  robots: {
+    index: false,
+    follow: false,
+  },
+  icons: {
+    icon: "/common/favicon/favicon.svg",
+    apple: "/common/favicon/apple-touch-icon.png",
+  },
 };
 
 type RootLayoutProps = {

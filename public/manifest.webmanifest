@@ -1,0 +1,21 @@
+{
+  "name": "hair salon にくきゅう",
+  "short_name": "にくきゅう",
+  "description": "森下にオープンする、お客様だけのプライベートヘアサロン。hair salon にくきゅうの公式サイトです。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8f3",
+  "theme_color": "#bf5225",
+  "icons": [
+    {
+      "src": "/common/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/common/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
