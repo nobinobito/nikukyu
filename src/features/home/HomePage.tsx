@@ -8,6 +8,7 @@ import {HeroSection} from "@/features/home/sections/HeroSection/HeroSection";
 import {AboutSection} from "@/features/home/sections/AboutSection/AboutSection";
 import {ExperienceSection} from "@/features/home/sections/ExperienceSection/ExperienceSection";
 import {FeaturesSection} from "@/features/home/sections/FeaturesSection/FeaturesSection";
+import {MobileGallerySection} from "@/features/home/sections/MobileGallerySection/MobileGallerySection";
 import {Footer} from "@/components/layout/Footer/Footer";
 import {OnlineStoreSection} from "@/features/home/sections/OnlineStoreSection/OnlineStoreSection";
 import {PaymentsSection} from "@/features/home/sections/PaymentsSection/PaymentsSection";
@@ -26,6 +27,7 @@ export function HomePage() {
       <main className={styles.main}>
         <HeroSection/>
         <AboutSection/>
+        <MobileGallerySection/>
         <FeaturesSection/>
         <ExperienceSection/>
         <SalonProductsSection/>
