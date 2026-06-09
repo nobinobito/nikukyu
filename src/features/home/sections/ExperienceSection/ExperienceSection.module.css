@@ -147,7 +147,7 @@
 }
 
 .illustrationBarking {
-    animation: dogBarkShake 900ms ease-in-out 1;
+    animation: dogBarkShake 1500ms ease-in-out 1;
     transform-origin: center;
 }
 

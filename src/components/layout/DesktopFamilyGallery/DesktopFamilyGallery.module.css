@@ -110,30 +110,6 @@
     .catCard {
         background: #fff4ec;
     }
-
-    .pcCatCard {
-        background: #fff8f3;
-    }
-
-    .dogCardSoft {
-        background: #f8ece3;
-    }
-
-    .catCardWarm {
-        background: #fff0e7;
-    }
-
-    .pcCatCardSoft {
-        background: #fbf0e8;
-    }
-
-    .dogCardWarm {
-        background: #fff7f0;
-    }
-
-    .catCardSoft {
-        background: #fff5ee;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
