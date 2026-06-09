@@ -40,6 +40,8 @@ const featureCards = [
 
 export function FeaturesSection() {
   const visualRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const cardRefs = useRef<Array<HTMLElement | null>>([]);
+  const spunCardsRef = useRef<Set<number>>(new Set());
 
   useEffect(() => {
     const updateParallax = () => {
@@ -79,6 +81,48 @@ export function FeaturesSection() {
     };
   }, []);
 
+  useEffect(() => {
+    const cardElements = cardRefs.current.filter((node): node is HTMLElement => node !== null);
+
+    if (cardElements.length === 0) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          const cardIndex = Number(entry.target.getAttribute("data-card-index"));
+
+          if (spunCardsRef.current.has(cardIndex)) {
+            observer.unobserve(entry.target);
+            return;
+          }
+
+          spunCardsRef.current.add(cardIndex);
+          entry.target.classList.add(styles.cardVisible);
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -16% 0px",
+        threshold: 0.35,
+      },
+    );
+
+    cardElements.forEach((cardElement) => {
+      observer.observe(cardElement);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section id="features" className={styles.features} aria-labelledby="features-title">
       <div className={styles.inner}>
@@ -91,8 +135,15 @@ export function FeaturesSection() {
         </header>
 
         <div className={styles.cards}>
-          {featureCards.map((card) => (
-            <article key={card.number} className={styles.card}>
+          {featureCards.map((card, index) => (
+            <article
+              key={card.number}
+              ref={(node) => {
+                cardRefs.current[index] = node;
+              }}
+              data-card-index={index}
+              className={styles.card}
+            >
               <div className={styles.cardHeading}>
                 <span className={styles.cardNumber}>{card.number}</span>
                 <h3 className={styles.cardTitle}>

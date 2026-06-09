@@ -59,11 +59,31 @@
 }
 
 .cardNumber {
+    position: relative;
+    display: inline-block;
     color: rgba(191, 82, 37, 0.5);
     font-family: var(--font-heading-en);
     font-size: 96px;
     line-height: 0.9;
     letter-spacing: 0.12em;
+}
+
+.cardNumber::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -18%;
+    width: 28%;
+    height: 150%;
+    background: linear-gradient(115deg, rgba(255, 255, 255, 0) 0%, rgba(255, 251, 245, 0.95) 46%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transform: translate3d(0, -50%, 0) rotate(18deg);
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+.cardVisible .cardNumber::after {
+    animation: cardNumberSparkle 820ms ease-out 1;
 }
 
 .cardTitle {
@@ -111,7 +131,31 @@
     margin: 0;
 }
 
+@keyframes cardNumberSparkle {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -50%, 0) rotate(18deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    78% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(360%, -50%, 0) rotate(18deg);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
+    .cardVisible .cardNumber::after {
+        animation: none;
+    }
+
     .cardImage {
         height: 100%;
         transform: none;
