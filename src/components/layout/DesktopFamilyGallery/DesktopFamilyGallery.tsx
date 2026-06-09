@@ -3,15 +3,25 @@
 import { useEffect, useState } from "react";
 import styles from "./DesktopFamilyGallery.module.css";
 
-const samplePhotos = [
-  { src: "/home/about/about-bg.jpg", alt: "sample dog 1", className: "dogCard" },
-  { src: "/home/hero/cat.svg", alt: "sample cat 1", className: "catCard" },
-  { src: "/home/online_store/cat_on_pc.svg", alt: "sample cat 2", className: "pcCatCard" },
-  { src: "/home/about/about-bg.jpg", alt: "sample dog 2", className: "dogCardSoft" },
-  { src: "/home/hero/cat.svg", alt: "sample cat 3", className: "catCardWarm" },
-  { src: "/home/online_store/cat_on_pc.svg", alt: "sample cat 4", className: "pcCatCardSoft" },
-  { src: "/home/about/about-bg.jpg", alt: "sample dog 3", className: "dogCardWarm" },
-  { src: "/home/hero/cat.svg", alt: "sample cat 5", className: "catCardSoft" },
+const photos = [
+  { src: "/home/gallery/d1.jpg", alt: "dog 1", className: "dogCard" },
+  { src: "/home/gallery/d2.jpg", alt: "dog 2", className: "dogCard" },
+  { src: "/home/gallery/d3.jpg", alt: "dog 3", className: "dogCard" },
+  { src: "/home/gallery/d4.jpg", alt: "dog 4", className: "dogCard" },
+  { src: "/home/gallery/d5.jpg", alt: "dog 5", className: "dogCard" },
+  { src: "/home/gallery/d6.jpg", alt: "dog 6", className: "dogCard" },
+  { src: "/home/gallery/d7.jpg", alt: "dog 7", className: "dogCard" },
+  { src: "/home/gallery/d8.jpg", alt: "dog 8", className: "dogCard" },
+  { src: "/home/gallery/d9.jpg", alt: "dog 9", className: "dogCard" },
+  { src: "/home/gallery/c1.jpg", alt: "cat 1", className: "catCard" },
+  { src: "/home/gallery/c2.jpg", alt: "cat 2", className: "catCard" },
+  { src: "/home/gallery/c3.jpg", alt: "cat 3", className: "catCard" },
+  { src: "/home/gallery/c4.jpg", alt: "cat 4", className: "catCard" },
+  { src: "/home/gallery/c5.jpg", alt: "cat 5", className: "catCard" },
+  { src: "/home/gallery/c6.jpg", alt: "cat 6", className: "catCard" },
+  { src: "/home/gallery/c7.jpg", alt: "cat 7", className: "catCard" },
+  { src: "/home/gallery/c8.jpg", alt: "cat 8", className: "catCard" },
+  { src: "/home/gallery/c9.jpg", alt: "cat 9", className: "catCard" },
 ] as const;
 
 const hashtags = [
@@ -28,7 +38,7 @@ function getRandomInt(max: number) {
 }
 
 function getInitialVisibleIndices() {
-  const indices = samplePhotos.map((_, index) => index);
+  const indices = photos.map((_, index) => index);
 
   for (let index = indices.length - 1; index > 0; index -= 1) {
     const randomIndex = getRandomInt(index + 1);
@@ -59,7 +69,7 @@ export function DesktopFamilyGallery() {
     const interval = window.setInterval(() => {
       setVisibleIndices((current) => {
         const slotIndex = getRandomInt(current.length);
-        const remainingIndices = samplePhotos
+        const remainingIndices = photos
           .map((_, index) => index)
           .filter((index) => !current.includes(index));
 
@@ -88,7 +98,7 @@ export function DesktopFamilyGallery() {
 
         <div className={styles.grid}>
           {visibleIndices.map((photoIndex, index) => {
-            const photo = samplePhotos[photoIndex];
+            const photo = photos[photoIndex];
 
             return (
               <figure
