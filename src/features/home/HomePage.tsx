@@ -1,6 +1,6 @@
 import {DesktopFamilyGallery} from "@/components/layout/DesktopFamilyGallery/DesktopFamilyGallery";
 import {DesktopMenu} from "@/components/layout/DesktopMenu/DesktopMenu";
-import {FixedReservationBar} from "@/components/layout/FixedReservationBar/FixedReservationBar";
+// import {FixedReservationBar} from "@/components/layout/FixedReservationBar/FixedReservationBar";
 import {IntroMessageOverlay} from "@/components/layout/IntroMessageOverlay/IntroMessageOverlay";
 import styles from "./HomePage.module.css";
 import {MobileMenu} from "@/components/layout/MobileMenu/MobileMenu";
@@ -23,7 +23,7 @@ export function HomePage() {
       <MobileMenu/>
       <DesktopFamilyGallery/>
       <DesktopMenu/>
-      <FixedReservationBar/>
+      {/* <FixedReservationBar/> */}
       <main className={styles.main}>
         <HeroSection/>
         <AboutSection/>

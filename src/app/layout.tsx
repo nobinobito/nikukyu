@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { barlowCondensed, notoSansJp, shirokuma } from "./fonts";
 import "./globals.css";
 import React from "react";
@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   title: "hair salon にくきゅう",
   description:
     "森下にオープンする、お客様だけのプライベートヘアサロン。hair salon にくきゅうの公式サイトです。",
-  manifest: "/manifest.webmanifest",
   robots: {
     index: false,
     follow: false,
@@ -16,10 +15,6 @@ export const metadata: Metadata = {
     icon: "/common/favicon/favicon.svg",
     apple: "/common/favicon/apple-touch-icon.png",
   },
-};
-
-export const viewport: Viewport = {
-  viewportFit: "cover",
 };
 
 type RootLayoutProps = {
