@@ -3,7 +3,7 @@ import {DesktopMenu} from "@/components/layout/DesktopMenu/DesktopMenu";
 import {FixedReservationBar} from "@/components/layout/FixedReservationBar/FixedReservationBar";
 import {IntroMessageOverlay} from "@/components/layout/IntroMessageOverlay/IntroMessageOverlay";
 import styles from "./HomePage.module.css";
-// import {MobileMenu} from "@/components/layout/MobileMenu/MobileMenu";
+import {MobileMenu} from "@/components/layout/MobileMenu/MobileMenu";
 import {HeroSection} from "@/features/home/sections/HeroSection/HeroSection";
 import {AboutSection} from "@/features/home/sections/AboutSection/AboutSection";
 import {ExperienceSection} from "@/features/home/sections/ExperienceSection/ExperienceSection";
@@ -20,7 +20,7 @@ export function HomePage() {
   return (
     <div className={styles.siteShell}>
       <IntroMessageOverlay/>
-      {/* <MobileMenu/> */}
+      <MobileMenu/>
       <DesktopFamilyGallery/>
       <DesktopMenu/>
       <FixedReservationBar/>
