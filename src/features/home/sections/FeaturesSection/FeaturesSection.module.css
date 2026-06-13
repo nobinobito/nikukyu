@@ -54,7 +54,7 @@
     display: grid;
     grid-template-columns: 84px 1fr;
     align-items: center;
-    gap: 12px;
+    gap: 24px;
     margin-bottom: 22px;
 }
 
@@ -113,9 +113,13 @@
     width: 100%;
     height: calc(100% + 96px);
     object-fit: cover;
-    transform: translateY(calc(var(--parallax-offset) - 24px)) scale(1.05);
+    transform: translateY(calc(var(--parallax-offset) - 40px)) scale(1.05);
     transform-origin: center;
     will-change: transform;
+}
+
+.cardVideo {
+    background: #fffdf9;
 }
 
 .cardBody {

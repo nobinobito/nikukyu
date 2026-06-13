@@ -6,34 +6,36 @@ import styles from "./FeaturesSection.module.css";
 const featureCards = [
   {
     number: "01",
-    title: ["完全マンツーマンの", "プライベート空間"],
+    title: ["マンツーマンの", "プライベート空間"],
     imageSrc: "/home/features/private-salon-space.jpg",
     imageAlt: "プライベートサロンのセット面",
     body: [
-      "サロン空間をひとり占めできる、完全マンツーマンのヘアサロンです。",
-      "周りを気にすることなく、自分だけの時間をゆったりとお過ごしいただけます。",
-      "シャンプー台にはフルフラット仕様を採用し、施術中も心地よくリラックスできる空間を整えています。",
+      "周りを気にすることなく、自分だけの時間をゆったりお過ごしいただけます。",
+      "お仕事、おうちのこと、ご家族のことなど、日々がんばっている皆さまに、さりげなく寄り添いながら心身がほっと緩む時間をご提供いたします。",
     ],
   },
   {
     number: "02",
-    title: ["すべてのメニューに", "ヘッドスパと炭酸泉を"],
+    title: ["すべてのメニューに", "炭酸泉とヘッドスパを"],
     imageSrc: "/home/features/spa.webp",
     imageAlt: "炭酸泉をイメージした写真",
     body: [
-      "にくきゅうでは、すべてのメニューにヘッドスパと炭酸泉が含まれています。",
-      "ヘッドスパの技術を学んだスタイリストが、頭皮や髪の状態に合わせて丁寧に施術いたします。",
-      "使用する商材にはESTESSiMOを取り入れ、心地よさだけでなく、頭皮環境を整えるケアも大切にしています。",
+      "健康な髪の毛を育むために、土壌となる頭皮のケアを大切にしています。",
+      "炭酸泉で頭皮をすっきりきれいに整え、ヘッドスパとの相乗効果で血行を促進。",
+      "お客さま一人ひとりの頭皮と髪の毛に最適なケア剤を使用し、",
+      "これから生えてくる髪の毛の髪質改善を目指します。",
     ],
   },
   {
     number: "03",
-    title: ["AI診断で", "あなたに合ったご提案"],
-    imageSrc: "/home/features/ai.jpg",
-    imageAlt: "スマートミラーによるAI診断の画面",
+    title: ["みんなにやさしい店内"],
+    imageSrc: "/common/videos/nikukyu_cg-poster.jpg",
+    imageAlt: "段差のない店内をイメージした動画",
+    videoSrc: "/common/videos/nikukyu_cg.MP4",
     body: [
-      "スマートミラーを活用したAI診断により、頭皮や髪の状態を可視化します。",
-      "感覚だけに頼るのではなく、状態を一緒に確認しながら、一人ひとりに合った施術やケアをご提案します。",
+      "ベビーカーや車いすをご利用の方がスムーズに移動できるよう、店内には段差がありません。",
+      "広々トイレには、手すりとベビーシートも完備。",
+      "※車いすからシャンプー台への移乗に介助が必要なお客さまには、安全面への配慮から、介助者の方のご同伴をお願いする場合がございます。ご予約時にお気軽にご相談ください。",
     ],
   },
 ] as const;
@@ -41,6 +43,7 @@ const featureCards = [
 export function FeaturesSection() {
   const visualRefs = useRef<Array<HTMLDivElement | null>>([]);
   const cardRefs = useRef<Array<HTMLElement | null>>([]);
+  const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
   const spunCardsRef = useRef<Set<number>>(new Set());
 
   useEffect(() => {
@@ -123,6 +126,53 @@ export function FeaturesSection() {
     };
   }, []);
 
+  useEffect(() => {
+    const videoElements = videoRefs.current.filter((node): node is HTMLVideoElement => node !== null);
+
+    if (videoElements.length === 0) {
+      return;
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      videoElements.forEach((video) => {
+        video.pause();
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement;
+
+          if (entry.isIntersecting) {
+            void video.play().catch(() => undefined);
+            return;
+          }
+
+          video.pause();
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.35,
+      },
+    );
+
+    videoElements.forEach((video) => {
+      video.pause();
+      observer.observe(video);
+    });
+
+    return () => {
+      observer.disconnect();
+      videoElements.forEach((video) => {
+        video.pause();
+      });
+    };
+  }, []);
+
   return (
     <section id="features" className={styles.features} aria-labelledby="features-title">
       <div className={styles.inner}>
@@ -159,8 +209,24 @@ export function FeaturesSection() {
                   visualRefs.current[Number(card.number) - 1] = node;
                 }}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className={styles.cardImage} src={card.imageSrc} alt={card.imageAlt} />
+                {"videoSrc" in card ? (
+                  <video
+                    ref={(node) => {
+                      videoRefs.current[index] = node;
+                    }}
+                    className={`${styles.cardImage} ${styles.cardVideo}`}
+                    muted
+                    loop
+                    playsInline
+                    preload="none"
+                    poster={card.imageSrc}
+                    aria-label={card.imageAlt}
+                  >
+                    <source src={card.videoSrc} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img className={styles.cardImage} src={card.imageSrc} alt={card.imageAlt} />
+                )}
               </div>
 
               <div className={styles.cardBody}>
