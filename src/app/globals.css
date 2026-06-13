@@ -59,6 +59,11 @@ main {
 }
 
 @media (min-width: 768px) {
+  html,
+  body {
+    overscroll-behavior-y: none;
+  }
+
   body {
     background: var(--color-bg);
   }
