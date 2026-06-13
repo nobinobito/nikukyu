@@ -5,9 +5,9 @@
 @media (min-width: 768px) {
     .wrap {
         position: fixed;
-        top: 28px;
+        top: 50%;
         left: calc(50% + (var(--site-max-width) / 2) + ((100vw - var(--site-max-width)) / 4));
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         z-index: var(--z-header);
         display: grid;
         gap: 12px;
