@@ -1,4 +1,9 @@
 import styles from "./SalonInformationSection.module.css";
+import {
+  addressLocality,
+  addressRegion,
+  streetAddress,
+} from "@/app/siteMetadata";
 
 const backgroundImgSrc = "/home/salon_information/background.JPG";
 const googleMapUrl =
@@ -25,8 +30,8 @@ export function SalonInformationSection() {
         <div className={styles.infoBlock}>
           <p className={styles.salonName}>hair salon にくきゅう</p>
           <address className={styles.address}>
-            <span>東京都墨田区森下1-14-2</span>
-            <span>Y’s Terrace 102</span>
+            <span>{`${addressRegion}${addressLocality}`}</span>
+            <span>{streetAddress}</span>
           </address>
           <a className={styles.mapLink} href={googleMapUrl} target="_blank" rel="noreferrer">
             GoogleMapで見る
