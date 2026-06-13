@@ -6,7 +6,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: #f4eee8;
+  background: transparent;
 }
 
 body {
@@ -15,7 +15,7 @@ body {
   --font-body: var(--font-noto-sans-jp), system-ui, sans-serif;
   --font-heading-en: var(--font-barlow-condensed), sans-serif;
   --font-logo: var(--font-shirokuma), var(--font-noto-sans-jp), sans-serif;
-  background: var(--color-bg);
+  background: transparent;
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.8;
@@ -59,6 +59,10 @@ main {
 }
 
 @media (min-width: 768px) {
+  html {
+    background: #f4eee8;
+  }
+
   body {
     background: #f4eee8;
   }

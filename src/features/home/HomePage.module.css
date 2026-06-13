@@ -1,7 +1,7 @@
 .siteShell {
     width: 100%;
     min-height: 100vh;
-    background: var(--color-bg);
+    background: transparent;
 }
 
 .main {
@@ -35,6 +35,7 @@
     .siteShell {
         max-width: var(--site-max-width);
         margin: 0 auto;
+        background: var(--color-bg);
         box-shadow: 0 0 48px rgba(79, 58, 50, 0.08);
     }
 }
