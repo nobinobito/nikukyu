@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { barlowCondensed, notoSansJp, shirokuma } from "./fonts";
 import "./globals.css";
 import React from "react";
@@ -16,6 +16,10 @@ export const metadata: Metadata = {
     icon: "/common/favicon/favicon.svg",
     apple: "/common/favicon/apple-touch-icon.png",
   },
+};
+
+export const viewport: Viewport = {
+  viewportFit: "cover",
 };
 
 type RootLayoutProps = {
