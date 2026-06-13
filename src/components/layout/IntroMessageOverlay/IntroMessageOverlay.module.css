@@ -4,7 +4,7 @@
     z-index: 120;
     display: grid;
     place-items: center;
-    background: #fff8f3;
+    background: #ffffff;
     opacity: 1;
     transition: opacity 700ms ease;
 }
