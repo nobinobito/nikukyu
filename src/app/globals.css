@@ -15,7 +15,7 @@ body {
   --font-body: var(--font-noto-sans-jp), system-ui, sans-serif;
   --font-heading-en: var(--font-barlow-condensed), sans-serif;
   --font-logo: var(--font-shirokuma), var(--font-noto-sans-jp), sans-serif;
-  background: var(--color-bg);
+  background: #ffffff;
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.8;
@@ -56,4 +56,10 @@ main {
 ::selection {
   background: var(--color-main-light);
   color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  body {
+    background: var(--color-bg);
+  }
 }
