@@ -3,7 +3,7 @@ import styles from "./ReservationGuideSection.module.css";
 const reservationLinks = [
   { label: "LINE予約", href: "https://lin.ee/OM03LzR  " },
   { label: "Instagram予約", href: "https://www.instagram.com/nikukyu.hair/" },
-  { label: "Google予約", href: "#" },
+  // { label: "Google予約", href: "#" },
 ] as const;
 
 export function ReservationGuideSection() {
@@ -23,8 +23,12 @@ export function ReservationGuideSection() {
         <p className={styles.catchCopy}>ご予約はオンラインにて</p>
 
         <div className={styles.body}>
-          <p>ご予約はオンラインにて承っております。</p>
-          <p>LINE・Instagram・Googleより、ご都合のよい方法でご予約ください。</p>
+          {/*<p>ご予約はオンラインにて承っております。</p>*/}
+          {/*<p>LINE・Instagram・Googleより、ご都合のよい方法でご予約ください。</p>*/}
+          {/*<p>お客様だけのゆったりとした時間をご用意して、お待ちしております。</p>*/}
+          <p>現在はメッセージでご予約を承っています</p>
+          <p>予約フォームは2026年7月中旬以降にご利用いただける予定です。</p>
+          <p>それまでは、LINEまたはInstagramのメッセージにてご予約をお願いいたします。</p>
           <p>お客様だけのゆったりとした時間をご用意して、お待ちしております。</p>
         </div>
 
