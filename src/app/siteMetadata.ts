@@ -2,7 +2,7 @@ export const siteUrl = new URL("https://nikukyu.hair");
 export const siteName = "hair salon にくきゅう";
 export const siteTitle = "hair salon にくきゅう | 森下の貸し切りヘアサロン";
 export const siteDescription =
-  "森下の1席だけの貸し切りヘアサロン。マンツーマンのプライベート空間で、炭酸泉やヘッドスパを通して髪と頭皮にやさしく寄り添います。ベビーカーや車いすでも移動しやすい段差のない店内で、広々としたトイレには手すりとベビーシートも備えています。";
+  "森下の1席だけの貸し切りヘアサロン。マンツーマンのプライベート空間で、炭酸泉やヘッドスパを通して頭皮と髪にやさしく寄り添い、髪質改善を目指します。ベビーカーや車いすでも移動しやすい段差のない店内で、広々としたトイレには手すりとベビーシートも備えています。";
 export const ogImagePath = "/common/og/nikukyu-og.png";
 export const reservationUrl = "https://nikukyu.hair/#reservation-guide";
 export const businessHoursText = "9:00-18:00";

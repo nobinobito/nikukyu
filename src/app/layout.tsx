@@ -53,21 +53,6 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [ogImagePath],
   },
-  icons: {
-    icon: [
-      {
-        url: "/common/favicon/android-chrome-192x192.png",
-        type: "image/png",
-        sizes: "192x192",
-      },
-      {
-        url: "/common/favicon/favicon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    shortcut: "/favicon.ico",
-    apple: "/common/favicon/apple-touch-icon.png",
-  },
 };
 
 type RootLayoutProps = {
