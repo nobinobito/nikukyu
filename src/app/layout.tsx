@@ -19,6 +19,7 @@ import {
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
+  manifest: "/manifest.webmanifest",
   title: {
     default: siteTitle,
     template: `%s | ${siteName}`,
@@ -50,7 +51,18 @@ export const metadata: Metadata = {
     images: [ogImagePath],
   },
   icons: {
-    icon: "/common/favicon/favicon.svg",
+    icon: [
+      {
+        url: "/common/favicon/android-chrome-192x192.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+      {
+        url: "/common/favicon/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "/favicon.ico",
     apple: "/common/favicon/apple-touch-icon.png",
   },
 };

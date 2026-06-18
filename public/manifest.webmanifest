@@ -1,7 +1,7 @@
 {
   "name": "hair salon にくきゅう",
   "short_name": "にくきゅう",
-  "description": "森下にオープンする、お客様だけのプライベートヘアサロン。hair salon にくきゅうの公式サイトです。",
+  "description": "森下の1席だけの貸し切りヘアサロン。マンツーマンのプライベート空間で、炭酸泉やヘッドスパを通して髪と頭皮にやさしく寄り添います。",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fff8f3",
