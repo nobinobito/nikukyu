@@ -48,20 +48,8 @@
     inset: 0;
 }
 
-.catButton {
+.catWrap {
     position: absolute;
-    display: block;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.catButton:focus-visible {
-    outline: 2px solid #bf5225;
-    outline-offset: 8px;
-    border-radius: 999px;
 }
 
 .catRightButton {
@@ -76,6 +64,23 @@
     left: 52px;
     width: 145px;
     height: 145px;
+}
+
+.catButton {
+    position: absolute;
+    inset: 0;
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.catButton:focus-visible {
+    outline: 2px solid #bf5225;
+    outline-offset: 8px;
+    border-radius: 999px;
 }
 
 .cat {
