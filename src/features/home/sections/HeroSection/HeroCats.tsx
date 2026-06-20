@@ -69,6 +69,8 @@ export function HeroCats() {
           src={catSrc}
           alt=""
           aria-hidden="true"
+          width="146"
+          height="176"
           loading="eager"
           fetchPriority="high"
           decoding="sync"
@@ -85,6 +87,8 @@ export function HeroCats() {
           src={catSrc}
           alt=""
           aria-hidden="true"
+          width="146"
+          height="176"
           loading="eager"
           decoding="sync"
         />

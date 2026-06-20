@@ -52,14 +52,14 @@
     top: 200px;
     left: 198px;
     width: 145px;
-    height: 145px;
+    aspect-ratio: 146 / 176;
 }
 
 .catLeftButton {
     top: 347px;
     left: 52px;
     width: 145px;
-    height: 145px;
+    aspect-ratio: 146 / 176;
 }
 
 .catButton {
@@ -83,7 +83,8 @@
     inset: 0;
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
 }
 
 .meow {
