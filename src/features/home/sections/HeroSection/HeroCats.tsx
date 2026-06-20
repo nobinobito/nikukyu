@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import styles from "./HeroSection.module.css";
 
-const catSrc = "/home/hero/cat.svg";
+const catSrc = "/home/hero/cat.webp";
 
 export function HeroCats() {
   const [showRightMeow, setShowRightMeow] = useState(false);
