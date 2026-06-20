@@ -17,7 +17,7 @@ const productCards = [
   },
   {
     brand: "SEE SAW",
-    imageSrc: "/home/salon_products/seesaw.png",
+    imageSrc: "/home/salon_products/seesaw.jpg",
     imageAlt: "SEE SAW のプロダクト",
     imagePosition: "center 34%",
   },
