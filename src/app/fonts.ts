@@ -1,12 +1,5 @@
-import { Barlow_Condensed, Noto_Sans_JP } from "next/font/google";
+import { Barlow_Condensed } from "next/font/google";
 import localFont from "next/font/local";
-
-export const notoSansJp = Noto_Sans_JP({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-noto-sans-jp",
-  display: "swap",
-});
 
 export const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],

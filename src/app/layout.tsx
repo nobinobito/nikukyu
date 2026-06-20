@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { barlowCondensed, notoSansJp, shirokuma } from "./fonts";
+import { barlowCondensed, shirokuma } from "./fonts";
 import "./globals.css";
 import React from "react";
 import {
@@ -89,7 +89,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ja">
     <body
-      className={`${notoSansJp.variable} ${barlowCondensed.variable} ${shirokuma.variable}`}
+      className={`${barlowCondensed.variable} ${shirokuma.variable}`}
     >
     <Script
       src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}

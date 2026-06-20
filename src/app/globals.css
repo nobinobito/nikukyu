@@ -12,9 +12,18 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  --font-body: var(--font-noto-sans-jp), system-ui, sans-serif;
+  --font-body:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "YuGothic",
+    "Meiryo",
+    sans-serif;
   --font-heading-en: var(--font-barlow-condensed), sans-serif;
-  --font-logo: var(--font-shirokuma), var(--font-noto-sans-jp), sans-serif;
+  --font-logo: var(--font-shirokuma), var(--font-body);
   background: #ffffff;
   color: var(--color-text);
   font-family: var(--font-body);
