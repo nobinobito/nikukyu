@@ -19,7 +19,7 @@ import {SalonProductsSection} from "@/features/home/sections/SalonProductsSectio
 export function HomePage() {
   return (
     <div className={styles.siteShell}>
-      <IntroMessageOverlay/>
+      {/*<IntroMessageOverlay/>*/}
       <MobileMenu/>
       <DesktopFamilyGallery/>
       <DesktopMenu/>
