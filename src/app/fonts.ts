@@ -19,4 +19,5 @@ export const shirokuma = localFont({
   src: "../../public/fonts/001Shirokuma-Regular.otf",
   variable: "--font-shirokuma",
   display: "swap",
+  preload: false,
 });

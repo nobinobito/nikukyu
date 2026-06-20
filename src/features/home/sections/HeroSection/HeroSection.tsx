@@ -66,10 +66,25 @@ export function HeroSection() {
 
         <div className={styles.visualArea}>
           <button type="button" className={`${styles.catButton} ${styles.catRightButton}`} onClick={handleRightCatClick} aria-label="右の猫がにゃーと鳴く">
-            <img className={`${styles.cat} ${styles.catRight}`} src={catSrc} alt="" aria-hidden="true" />
+            <img
+              className={`${styles.cat} ${styles.catRight}`}
+              src={catSrc}
+              alt=""
+              aria-hidden="true"
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
+            />
           </button>
           <button type="button" className={`${styles.catButton} ${styles.catLeftButton}`} onClick={handleLeftCatClick} aria-label="左の猫がにゃーと鳴く">
-            <img className={`${styles.cat} ${styles.catLeft}`} src={catSrc} alt="" aria-hidden="true" />
+            <img
+              className={`${styles.cat} ${styles.catLeft}`}
+              src={catSrc}
+              alt=""
+              aria-hidden="true"
+              loading="eager"
+              decoding="sync"
+            />
           </button>
           <span aria-hidden="true" className={`${styles.meow} ${styles.meowRight}`}>にゃ〜</span>
           <span aria-hidden="true" className={`${styles.meow} ${styles.meowLeft}`}>にゃ〜</span>
