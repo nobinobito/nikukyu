@@ -58,7 +58,12 @@ export function HeroCats() {
 
   return (
     <div className={styles.visualArea}>
-      <div className={`${styles.catWrap} ${styles.catRightButton}`}>
+      <button
+        type="button"
+        className={`${styles.catButton} ${styles.catRightButton}`}
+        onClick={handleRightCatClick}
+        aria-label="右の猫がにゃーと鳴く"
+      >
         <img
           className={`${styles.cat} ${styles.catRight}`}
           src={catSrc}
@@ -68,14 +73,13 @@ export function HeroCats() {
           fetchPriority="high"
           decoding="sync"
         />
-        <button
-          type="button"
-          className={styles.catButton}
-          onClick={handleRightCatClick}
-          aria-label="右の猫がにゃーと鳴く"
-        />
-      </div>
-      <div className={`${styles.catWrap} ${styles.catLeftButton}`}>
+      </button>
+      <button
+        type="button"
+        className={`${styles.catButton} ${styles.catLeftButton}`}
+        onClick={handleLeftCatClick}
+        aria-label="左の猫がにゃーと鳴く"
+      >
         <img
           className={`${styles.cat} ${styles.catLeft}`}
           src={catSrc}
@@ -84,13 +88,7 @@ export function HeroCats() {
           loading="eager"
           decoding="sync"
         />
-        <button
-          type="button"
-          className={styles.catButton}
-          onClick={handleLeftCatClick}
-          aria-label="左の猫がにゃーと鳴く"
-        />
-      </div>
+      </button>
       <span aria-hidden="true" className={`${styles.meow} ${styles.meowRight}`}>
         にゃ〜
       </span>

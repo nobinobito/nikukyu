@@ -48,10 +48,6 @@
     inset: 0;
 }
 
-.catWrap {
-    position: absolute;
-}
-
 .catRightButton {
     top: 200px;
     left: 198px;
@@ -68,7 +64,6 @@
 
 .catButton {
     position: absolute;
-    inset: 0;
     display: block;
     padding: 0;
     border: 0;
@@ -108,14 +103,14 @@
 }
 
 .catRight {
-    /*animation: catTrembleRight 950ms ease-in-out 3.7s 2;*/
+    animation: catTrembleRight 950ms ease-in-out 3.7s 2;
     transform-origin: center;
 }
 
 .catLeft {
     transform: scale(-1, -1);
     transform-origin: center;
-    /*animation: catTrembleLeft 950ms ease-in-out 3.85s 2;*/
+    animation: catTrembleLeft 950ms ease-in-out 3.85s 2;
 }
 
 .meowRight {
@@ -124,7 +119,7 @@
     --meow-transform: rotate(6deg) translate3d(0, 8px, 0) scale(0.92);
     --meow-transform-active: rotate(3deg) translate3d(0, 0, 0) scale(1);
     --meow-transform-end: rotate(2deg) translate3d(0, -10px, 0) scale(1.04);
-    /*animation: meowPop 1200ms ease-out 3.9s 1 both;*/
+    animation: meowPop 1200ms ease-out 3.9s 1 both;
 }
 
 .meowLeft {
@@ -133,7 +128,7 @@
     --meow-transform: rotate(-8deg) translate3d(0, 8px, 0) scale(0.92);
     --meow-transform-active: rotate(-4deg) translate3d(0, 0, 0) scale(1);
     --meow-transform-end: rotate(-2deg) translate3d(0, -10px, 0) scale(1.04);
-    /*animation: meowPop 1200ms ease-out 4.05s 1 both;*/
+    animation: meowPop 1200ms ease-out 4.05s 1 both;
 }
 
 .meowInteractive {
