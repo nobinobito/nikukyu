@@ -9,8 +9,8 @@ export const barlowCondensed = Barlow_Condensed({
 });
 
 export const shirokuma = localFont({
-  src: "../../public/fonts/001Shirokuma-Regular.woff2",
+  src: "../../public/fonts/001Shirokuma-Regular-subset.woff2",
   variable: "--font-shirokuma",
   display: "swap",
-  preload: false,
+  preload: true,
 });
