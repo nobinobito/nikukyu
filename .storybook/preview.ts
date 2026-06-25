@@ -3,7 +3,6 @@ import type { CSSProperties } from "react";
 import { createElement } from "react";
 import {
   barlowCondensed,
-  notoSansJp,
   shirokuma,
 } from "../src/app/fonts";
 import "../src/app/globals.css";
@@ -20,7 +19,7 @@ const preview: Preview = {
       createElement(
         "div",
         {
-          className: `${notoSansJp.variable} ${barlowCondensed.variable} ${shirokuma.variable}`,
+          className: `${barlowCondensed.variable} ${shirokuma.variable}`,
           style: storybookFontVars,
         },
         createElement(Story)
