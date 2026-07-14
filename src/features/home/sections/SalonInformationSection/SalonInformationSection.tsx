@@ -7,7 +7,7 @@ import {
 
 const backgroundImgSrc = "/home/salon_information/background.JPG";
 const googleMapUrl =
-  "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A2%A8%E7%94%B0%E5%8C%BA%E7%AB%8B%E5%B7%9D1-14-2-102";
+  "https://maps.app.goo.gl/Z2Ks6QqZs5WjKUgk7";
 
 export function SalonInformationSection() {
   return (
