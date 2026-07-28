@@ -3,7 +3,7 @@ import styles from "./ReservationGuideSection.module.css";
 const reservationLinks = [
   { label: "LINE予約", href: "https://lin.ee/OM03LzR" },
   { label: "Instagram予約", href: "https://www.instagram.com/nikukyu.hair/" },
-  // { label: "Google予約", href: "#" },
+  { label: "Web予約", href: "https://rwg.kanzashi.com/l/4N01267bVsd/hair" },
 ] as const;
 
 export function ReservationGuideSection() {
@@ -23,18 +23,14 @@ export function ReservationGuideSection() {
         <p className={styles.catchCopy}>ご予約はオンラインにて</p>
 
         <div className={styles.body}>
-          {/*<p>ご予約はオンラインにて承っております。</p>*/}
-          {/*<p>LINE・Instagram・Googleより、ご都合のよい方法でご予約ください。</p>*/}
-          {/*<p>お客様だけのゆったりとした時間をご用意して、お待ちしております。</p>*/}
-          <p>現在はメッセージでご予約を承っています</p>
-          <p>予約フォームは2026年7月中旬以降にご利用いただける予定です。</p>
-          <p>それまでは、LINEまたはInstagramのメッセージにてご予約をお願いいたします。</p>
+          <p>ご予約はオンラインにて承っております。</p>
+          <p>LINE・Instagram・Webより、ご都合のよい方法でご予約ください。</p>
           <p>お客様だけのゆったりとした時間をご用意して、お待ちしております。</p>
         </div>
 
         <div className={styles.buttons}>
           {reservationLinks.map((link) => (
-            <a key={link.label} className={styles.button} href={link.href}>
+            <a key={link.label} className={styles.button} href={link.href} target="_blank" rel="noopener noreferrer">
               {link.label}
             </a>
           ))}
