@@ -1,5 +1,5 @@
 import styles from "./HeroSection.module.css";
-import { HeroCats } from "./HeroCats";
+import { Hero } from "./Hero";
 
 export function HeroSection() {
   return (
@@ -10,7 +10,7 @@ export function HeroSection() {
           <span className={styles.logoMain}>にくきゅう</span>
         </h1>
 
-        <HeroCats />
+        <Hero />
 
         <p className={styles.copy}>
           <span>1席だけの</span>

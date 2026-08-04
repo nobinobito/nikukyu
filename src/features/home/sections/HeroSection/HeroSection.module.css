@@ -18,7 +18,7 @@
     width: 100%;
     margin: 0;
     color: #bf5225;
-    font-family: var(--font-logo);
+    font-family: var(--font-logo), sans-serif;
     font-weight: 400;
     line-height: 1;
     text-align: center;
@@ -48,92 +48,16 @@
     inset: 0;
 }
 
-.catRightButton {
-    top: 200px;
-    left: 198px;
-    width: 145px;
-    aspect-ratio: 146 / 176;
-}
-
-.catLeftButton {
-    top: 347px;
-    left: 52px;
-    width: 145px;
-    aspect-ratio: 146 / 176;
-}
-
-.catButton {
+.illustration {
     position: absolute;
+    top: 164px;
+    left: 50%;
     display: block;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.catButton:focus-visible {
-    outline: 2px solid #bf5225;
-    outline-offset: 8px;
-    border-radius: 999px;
-}
-
-.cat {
-    position: absolute;
-    inset: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    aspect-ratio: 863 / 1424;
+    transform: translateX(-50%);
+    height: auto;
     object-fit: contain;
-}
-
-.meow {
-    position: absolute;
-    color: #bf5225;
-    font-family: var(--font-logo);
-    font-size: 26px;
-    line-height: 1;
-    letter-spacing: 0.08em;
-    white-space: nowrap;
-    opacity: 0;
-    --meow-transform: translate3d(0, 8px, 0) scale(0.92);
-    --meow-transform-active: translate3d(0, 0, 0) scale(1);
-    --meow-transform-end: translate3d(0, -10px, 0) scale(1.04);
-    transform: var(--meow-transform);
-    pointer-events: none;
-}
-
-.catRight {
-    animation: catTrembleRight 950ms ease-in-out 3.7s 2;
-    transform-origin: center;
-}
-
-.catLeft {
-    transform: scale(-1, -1);
-    transform-origin: center;
-    animation: catTrembleLeft 950ms ease-in-out 3.85s 2;
-}
-
-.meowRight {
-    top: 172px;
-    left: 280px;
-    --meow-transform: rotate(6deg) translate3d(0, 8px, 0) scale(0.92);
-    --meow-transform-active: rotate(3deg) translate3d(0, 0, 0) scale(1);
-    --meow-transform-end: rotate(2deg) translate3d(0, -10px, 0) scale(1.04);
-    animation: meowPop 1200ms ease-out 3.9s 1 both;
-}
-
-.meowLeft {
-    top: 322px;
-    left: 18px;
-    --meow-transform: rotate(-8deg) translate3d(0, 8px, 0) scale(0.92);
-    --meow-transform-active: rotate(-4deg) translate3d(0, 0, 0) scale(1);
-    --meow-transform-end: rotate(-2deg) translate3d(0, -10px, 0) scale(1.04);
-    animation: meowPop 1200ms ease-out 4.05s 1 both;
-}
-
-.meowInteractive {
-    animation: meowPop 950ms ease-out 1 both;
 }
 
 .copy {
@@ -179,79 +103,6 @@
     width: 1px;
     height: 60px;
     background: #bf5225;
-}
-
-@keyframes catTrembleRight {
-    0%,
-    100% {
-        transform: translate3d(0, 0, 0) rotate(0deg);
-    }
-
-    20% {
-        transform: translate3d(-2px, 1px, 0) rotate(-1.8deg);
-    }
-
-    40% {
-        transform: translate3d(2px, -1px, 0) rotate(1.6deg);
-    }
-
-    60% {
-        transform: translate3d(-1px, 1px, 0) rotate(-1deg);
-    }
-
-    80% {
-        transform: translate3d(1px, 0, 0) rotate(0.8deg);
-    }
-}
-
-@keyframes catTrembleLeft {
-    0%,
-    100% {
-        transform: scale(-1, -1) translate3d(0, 0, 0) rotate(0deg);
-    }
-
-    20% {
-        transform: scale(-1, -1) translate3d(-2px, 1px, 0) rotate(-1.8deg);
-    }
-
-    40% {
-        transform: scale(-1, -1) translate3d(2px, -1px, 0) rotate(1.6deg);
-    }
-
-    60% {
-        transform: scale(-1, -1) translate3d(-1px, 1px, 0) rotate(-1deg);
-    }
-
-    80% {
-        transform: scale(-1, -1) translate3d(1px, 0, 0) rotate(0.8deg);
-    }
-}
-
-@keyframes meowPop {
-    0% {
-        opacity: 0;
-        transform: var(--meow-transform, translate3d(0, 8px, 0) scale(0.92));
-    }
-
-    18%,
-    60% {
-        opacity: 1;
-        transform: var(--meow-transform-active, translate3d(0, 0, 0) scale(1));
-    }
-
-    100% {
-        opacity: 0;
-        transform: var(--meow-transform-end, translate3d(0, -10px, 0) scale(1.04));
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .catRight,
-    .catLeft,
-    .meowRight,
-    .meowLeft {
-        animation: none;
-    }
 }
 
 @media (min-width: 768px) {
