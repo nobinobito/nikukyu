@@ -15,6 +15,7 @@ export function Hero() {
         height="1424"
         sizes="200px"
         preload
+        fetchPriority="high"
         decoding="sync"
       />
     </div>
