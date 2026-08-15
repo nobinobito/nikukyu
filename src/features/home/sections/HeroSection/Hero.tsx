@@ -18,6 +18,21 @@ export function Hero() {
         fetchPriority="high"
         decoding="sync"
       />
+
+      <div className={styles.scissorSounds} aria-hidden="true">
+        <span className={`${styles.scissorSound} ${styles.soundLeftLower}`}>
+          チョキ
+        </span>
+        <span className={`${styles.scissorSound} ${styles.soundLeftUpper}`}>
+          チョキ
+        </span>
+        <span className={`${styles.scissorSound} ${styles.soundRightLower}`}>
+          チョキ
+        </span>
+        <span className={`${styles.scissorSound} ${styles.soundRightUpper}`}>
+          チョキ
+        </span>
+      </div>
     </div>
   );
 }
