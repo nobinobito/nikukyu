@@ -80,6 +80,14 @@
     font-weight: 400;
     line-height: 1;
     white-space: nowrap;
+    opacity: 0;
+    filter: blur(1.5px);
+    transition: opacity 1050ms ease-in-out, filter 1050ms ease-in-out;
+}
+
+.scissorSound[data-visible="true"] {
+    opacity: 0.78;
+    filter: blur(0);
 }
 
 .soundLeftLower {
