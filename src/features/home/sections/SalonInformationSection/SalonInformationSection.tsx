@@ -49,10 +49,9 @@ export function SalonInformationSection() {
           </div>
           <div className={styles.metaRow}>
             <dt className={styles.metaLabel}>交通手段</dt>
-            <dd className={styles.metaValue}>都営大江戸線「森下駅」より徒歩約4分</dd>
-            <dd className={styles.metaValue}>都営新宿線「森下駅」より徒歩約4分</dd>
-            <dd className={styles.metaValue}>都営大江戸線「両国」より徒歩約10分</dd>
-            <dd className={styles.metaValue}>都営新宿線「菊川駅」より徒歩約11分</dd>
+            <dd className={styles.metaValue}>「森下駅」A5出口より徒歩約4分</dd>
+            <dd className={styles.metaValue}>「両国駅」(大江戸線)より徒歩約10分</dd>
+            <dd className={styles.metaValue}>「菊川駅」より徒歩約11分</dd>
           </div>
         </dl>
       </div>
