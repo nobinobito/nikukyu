@@ -27,16 +27,39 @@ export function PaymentsSection() {
         <div className={styles.methodIcons} aria-label="対応している決済方法">
           {paymentMethods.map((method) => (
             <div key={method.alt} className={styles.methodIconWrap}>
+              {/* SVG is already a compact, resolution-independent local asset. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img className={styles.methodIcon} src={method.src} alt={method.alt} />
             </div>
           ))}
         </div>
+
+        <section className={styles.availableMethods} aria-labelledby="available-methods-title">
+          <h3 id="available-methods-title" className={styles.availableMethodsTitle}>
+            ご利用可能なお支払い方法
+          </h3>
+          <dl className={styles.availableMethodsList}>
+            <div className={styles.availableMethod}>
+              <dt>クレジットカード</dt>
+              <dd>VISA / MasterCard, 銀聯, JCB / AMEX / DINERS / DISCOVER</dd>
+            </div>
+            <div className={styles.availableMethod}>
+              <dt>QRコード決済</dt>
+              <dd>WeChat Pay, 銀聯, PayPay, 楽天ペイ, d払い, au PAY, メルペイ, JKOPAY, J-Coin Pay, Alipay+</dd>
+            </div>
+            <div className={styles.availableMethod}>
+              <dt>電子マネー・現金</dt>
+              <dd>電子マネーおよび現金でのお支払いはご利用いただけません。</dd>
+            </div>
+          </dl>
+        </section>
 
         <div className={styles.body}>
           <p>にくきゅうでは、施術やカウンセリングのお時間を大切にするため、お支払いはキャッシュレス決済のみとさせていただいております。</p>
           <p>現金でのお支払いは承っておりません。</p>
           <p>あらかじめご了承くださいますようお願いいたします。</p>
         </div>
+
       </div>
     </section>
   );
