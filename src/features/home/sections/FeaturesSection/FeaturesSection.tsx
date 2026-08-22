@@ -16,9 +16,9 @@ const featureCards = [
   },
   {
     number: "02",
-    title: ["すべてのメニューに", "炭酸泉とヘッドスパを"],
-    imageSrc: "/home/features/spa.webp",
-    imageAlt: "炭酸泉をイメージした写真",
+    title: ["すべてのメニューに", "ヘッドスパと炭酸泉を"],
+    imageSrc: "/home/features/headspa.jpeg",
+    imageAlt: "ヘッドスパ",
     body: [
       "健康な髪の毛を育むために、土壌となる頭皮のケアを大切にしています。",
       "炭酸泉で頭皮をすっきりきれいに整え、ヘッドスパとの相乗効果で血行を促進。",
