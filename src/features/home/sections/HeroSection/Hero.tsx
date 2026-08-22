@@ -3,21 +3,30 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
+import { useHomePageContext } from "@/features/home/HomePageProvider";
 import styles from "./HeroSection.module.css";
 
 const heroMainSrc = "/home/hero/hero_main.png";
 const soundCount = 4;
 
 export function Hero() {
+  const { isIntroComplete } = useHomePageContext();
   const [visibleSounds, setVisibleSounds] = useState<boolean[]>(() =>
     Array.from({ length: soundCount }, () => false),
   );
 
   useEffect(() => {
-    const timeoutIds = new Map<number, number>();
+    if (!isIntroComplete) {
+      return;
+    }
 
-    const scheduleSound = (index: number, isVisible: boolean) => {
-      const delay = isVisible
+    const timeoutIds = new Map<number, number>();
+    const firstSoundIndex = Math.floor(Math.random() * soundCount);
+
+    const scheduleSound = (index: number, isVisible: boolean, skipDelay = false) => {
+      const delay = skipDelay
+        ? 0
+        : isVisible
         ? 1400 + Math.random() * 1_400
         : 900 + Math.random() * 2_000;
 
@@ -37,13 +46,13 @@ export function Hero() {
     };
 
     for (let index = 0; index < soundCount; index += 1) {
-      scheduleSound(index, false);
+      scheduleSound(index, false, index === firstSoundIndex);
     }
 
     return () => {
       timeoutIds.forEach((timeoutId) => window.clearTimeout(timeoutId));
     };
-  }, []);
+  }, [isIntroComplete]);
 
   return (
     <div className={styles.visualArea}>

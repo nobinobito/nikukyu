@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useHomePageContext } from "@/features/home/HomePageProvider";
 import styles from "./IntroMessageOverlay.module.css";
 
 const DISPLAY_DURATION_MS = 3000;
@@ -14,6 +15,7 @@ const introLines = [
 
 export function IntroMessageOverlay() {
   const [phase, setPhase] = useState<"visible" | "fading" | "hidden">("visible");
+  const { completeIntro } = useHomePageContext();
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
@@ -30,6 +32,7 @@ export function IntroMessageOverlay() {
     }, DISPLAY_DURATION_MS);
 
     const hideTimeout = window.setTimeout(() => {
+      completeIntro();
       setPhase("hidden");
     }, DISPLAY_DURATION_MS + FADE_DURATION_MS);
 
@@ -37,7 +40,7 @@ export function IntroMessageOverlay() {
       window.clearTimeout(fadeTimeout);
       window.clearTimeout(hideTimeout);
     };
-  }, []);
+  }, [completeIntro]);
 
   if (phase === "hidden") return null;
 

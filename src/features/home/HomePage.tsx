@@ -15,28 +15,31 @@ import {PaymentsSection} from "@/features/home/sections/PaymentsSection/Payments
 import {ReservationGuideSection} from "@/features/home/sections/ReservationGuideSection/ReservationGuideSection";
 import {SalonInformationSection} from "@/features/home/sections/SalonInformationSection/SalonInformationSection";
 import {SalonProductsSection} from "@/features/home/sections/SalonProductsSection/SalonProductsSection";
+import {HomePageProvider} from "@/features/home/HomePageProvider";
 
 export function HomePage() {
   return (
     <div className={styles.siteShell}>
-      <IntroMessageOverlay/>
-      <MobileMenu/>
-      <DesktopFamilyGallery/>
-      <DesktopMenu/>
-      <FixedReservationBar/>
-      <main className={styles.main}>
-        <HeroSection/>
-        <AboutSection/>
-        <MobileGallerySection/>
-        <FeaturesSection/>
-        <ExperienceSection/>
-        <SalonProductsSection/>
-        <OnlineStoreSection/>
-        <PaymentsSection/>
-        <SalonInformationSection/>
-        <ReservationGuideSection/>
-        <Footer/>
-      </main>
+      <HomePageProvider>
+        <IntroMessageOverlay/>
+        <MobileMenu/>
+        <DesktopFamilyGallery/>
+        <DesktopMenu/>
+        <FixedReservationBar/>
+        <main className={styles.main}>
+          <HeroSection/>
+          <AboutSection/>
+          <MobileGallerySection/>
+          <FeaturesSection/>
+          <ExperienceSection/>
+          <SalonProductsSection/>
+          <OnlineStoreSection/>
+          <PaymentsSection/>
+          <SalonInformationSection/>
+          <ReservationGuideSection/>
+          <Footer/>
+        </main>
+      </HomePageProvider>
     </div>
   );
 }
