@@ -16,6 +16,7 @@ import {ReservationGuideSection} from "@/features/home/sections/ReservationGuide
 import {SalonInformationSection} from "@/features/home/sections/SalonInformationSection/SalonInformationSection";
 import {SalonProductsSection} from "@/features/home/sections/SalonProductsSection/SalonProductsSection";
 import {HomePageProvider} from "@/features/home/HomePageProvider";
+import {MenuSection} from "@/features/home/sections/MenuSection/MenuSection";
 
 export function HomePage() {
   return (
@@ -32,6 +33,7 @@ export function HomePage() {
           <MobileGallerySection/>
           <FeaturesSection/>
           <ExperienceSection/>
+          <MenuSection/>
           <SalonProductsSection/>
           <OnlineStoreSection/>
           <PaymentsSection/>

@@ -1,0 +1,123 @@
+.section {
+    position: relative;
+    margin-top: -1px;
+    background: #fff8f3;
+    color: #bf5225;
+}
+
+.inner {
+    padding: 52px 20px 56px;
+}
+
+.header {
+    margin-bottom: 34px;
+}
+
+.heading {
+    margin: 0;
+    font-family: var(--font-heading-en), sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.12em;
+}
+
+.headingLead {
+    font-size: 64px;
+}
+
+.headingRest {
+    font-size: 32px;
+}
+
+.subheading {
+    margin: 14px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+}
+
+.message {
+    display: grid;
+    gap: 28px;
+}
+
+.body p,
+.reservationGuide p {
+    margin: 0;
+}
+
+.body {
+    display: grid;
+    gap: 22px;
+    color: #724533;
+    font-size: 15px;
+    line-height: 2;
+    letter-spacing: 0.08em;
+}
+
+.imageWrap {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.menuImage {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.reservationGuide {
+    display: grid;
+    gap: 24px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #e7c8b9;
+    color: #724533;
+    font-size: 14px;
+    line-height: 1.9;
+    letter-spacing: 0.08em;
+}
+
+.reservationLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 65px;
+    margin: 0 auto;
+    padding: 0 16px;
+    width: min(100%, 244px);
+    border: 1px solid #e66832;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #bf5225;
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
+}
+
+.reservationLink:hover,
+.reservationLink:focus-visible {
+    background: #bf5225;
+    border-color: #bf5225;
+    color: #fff8f3;
+    box-shadow: 0 10px 22px rgb(191 82 37 / 18%);
+    transform: translateY(-1px);
+}
+
+.reservationLink:focus-visible {
+    outline: none;
+}
+
+@media (min-width: 768px) {
+    .inner {
+        padding: 64px 28px 72px;
+    }
+}

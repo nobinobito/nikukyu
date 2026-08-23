@@ -5,6 +5,7 @@ export const siteNavigationItems = [
   { label: "About", sublabel: "にくきゅうについて", href: "#about" },
   { label: "Features", sublabel: "特徴", href: "#features" },
   { label: "Experience", sublabel: "過ごし方", href: "#experience" },
+  { label: "Menu", sublabel: "メニュー", href: "#menu" },
   { label: "Salon Products", sublabel: "サロンで使う商品", href: "#salon-products" },
   { label: "Online Store", sublabel: "オンラインショップ", href: "#online-store" },
   { label: "Payments", sublabel: "お支払い方法", href: "#payments" },
